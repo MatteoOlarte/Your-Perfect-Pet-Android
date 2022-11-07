@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Your Perfect Pet</string>
+    <string name="text_login">Iniciar sesión</string>
+    <string name="text_register">Registrarse</string>
+    <string name="text_welcome">Bienvenido</string>
+    <string name="text_name">Nombre</string>
+    <string name="text_last_name">Apellido</string>
+    <string name="text_email">Email</string>
+    <string name="text_password">Contraseña</string>
+    <string name="text_user_info">Información del usuario</string>
+    <string name="text_account_info">Información de la cuenta</string>
+    <string name="text_job">Trabajo</string>
+    <string name="text_preferences">Mascota favorita</string>
+    <string name="text_pets">Mascotas</string>
+    <string name="text_profile">Perfil</string>
+
+    <string-array name="jobs">
+        <item>"Employed"</item>
+        <item>"Self-Employed"</item>
+        <item>"Unemployed"</item>
+    </string-array>
+
+    <string name="msg_welcome">Inicia sección en tu cuenta o regístrate si no tienes una.</string>
+    <string name="msg_password_helper">Debe contener como mínimo 8 caracteres </string>
+    <string name="msg_empty_fields">Algunos campos están vacíos.</string>
+    <string name="msg_invalid_email">Dirección de correo electrónico no válida</string>
+</resources>

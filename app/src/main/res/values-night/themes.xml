@@ -1,16 +1,30 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.YourPerfectPet" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/black</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+    <style name="Theme.YourPerfectPet" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary Colors -->
+        <item name="colorPrimary">@color/color_primary_night</item>
+        <item name="colorPrimaryVariant">@color/color_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <!-- Secondary Colors -->
+        <item name="colorSecondary">@color/color_primary_night</item>
+        <item name="colorSecondaryVariant">@color/color_dark</item>
+        <item name="colorOnSecondary">@color/white</item>
+
+        <!-- Background's Colors -->
+        <item name="android:windowBackground">@color/black</item>
+        <item name="colorSurface">@color/black_light</item>
+
+        <!-- Status' Colors -->
+        <item name="android:statusBarColor">@color/black_light</item>
+        <item name="android:windowLightStatusBar">false</item>
+
+        <!-- Navigation's Colors -->
+        <item name="android:navigationBarColor">@color/black_light</item>
+        <item name="android:windowLightNavigationBar">false</item>
+    </style>
+
+    <style name="Theme.YourPerfectPet.Toolbar" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar">
+        <item name="android:background">@color/black_light</item>
     </style>
 </resources>
