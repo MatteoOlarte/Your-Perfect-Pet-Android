@@ -2,86 +2,170 @@
 
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
 
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    tools:context=".LoginActivity">
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/register_input_user_fist_name"
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="nombre">
+        android:layout_width="match_parent">
 
-        <com.google.android.material.textfield.TextInputEditText
+        <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            app:elevation="0dp">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.appbar.MaterialToolbar
+                style="@style/Theme.YourPerfectPet.Toolbar"
+                android:id="@+id/register_toolbar"
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/register_input_user_last_name"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+
+                app:titleCentered="true"
+                app:title="@string/text_register" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="apellido">
+        android:layout_height="match_parent">
 
-        <com.google.android.material.textfield.TextInputEditText
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="match_parent"
+            android:padding="20dp"
+            android:paddingHorizontal="24dp"
+            android:orientation="vertical"
+            android:gravity="center|top">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                style="@style/ImportantTextView"
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/register_input_user_email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="email">
+                android:layout_gravity="start"
+                android:paddingBottom="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_user_info"/>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/register_input_user_fist_name"
 
-    </com.google.android.material.textfield.TextInputLayout>
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/text_name"
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/register_input_user_password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="password">
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:inputType="textCapWords"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
 
-    </com.google.android.material.textfield.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/register_input_user_job"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="trabajo">
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/register_input_user_last_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/text_last_name"
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-    </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:inputType="textCapWords"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/register_input_user_address"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="direcion">
+            </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/register_input_user_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/text_email"
 
-    </com.google.android.material.textfield.TextInputLayout>
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
+                <com.google.android.material.textfield.TextInputEditText
+                    android:inputType="textEmailAddress"
+                    android:autofillHints="emailAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/register_input_user_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/text_password"
+
+                app:endIconMode="password_toggle"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:inputType="textPassword"
+                    android:autofillHints="password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"/>
+
+            <TextView
+                style="@style/ImportantTextView"
+
+                android:layout_gravity="start"
+                android:paddingBottom="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_account_info"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/register_input_user_job_state"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/text_job"
+
+                app:startIconDrawable="@drawable/ic_work"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+
+                <AutoCompleteTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/register_input_user_pet_preferences"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/text_preferences"
+
+                app:startIconDrawable="@drawable/ic_pets"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+
+                <AutoCompleteTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>

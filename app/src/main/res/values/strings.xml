@@ -1,3 +1,27 @@
 <resources>
-    <string name="app_name">YourPerfectPet</string>
+    <string name="app_name">Your Perfect Pet</string>
+    <string name="text_login">Sign in</string>
+    <string name="text_register">Sign up</string>
+    <string name="text_welcome">Welcome</string>
+    <string name="text_name">First Name</string>
+    <string name="text_last_name">Last Name</string>
+    <string name="text_email">Email</string>
+    <string name="text_password">Password</string>
+    <string name="text_user_info">User info</string>
+    <string name="text_account_info">Account info</string>
+    <string name="text_job">Job</string>
+    <string name="text_preferences">Favorite pet</string>
+
+    <string-array name="jobs">
+        <item>"Employed"</item>
+        <item>"Self-Employed"</item>
+        <item>"Unemployed"</item>
+    </string-array>
+
+    <string-array name="pets">
+        <item>"Dogs"</item>
+        <item>"Cats"</item>
+    </string-array>
+
+    <string name="msg_welcome">Login into your account or if your are new create one.</string>
 </resources>
