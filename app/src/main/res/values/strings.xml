@@ -24,4 +24,7 @@
     </string-array>
 
     <string name="msg_welcome">Login into your account or if your are new create one.</string>
+    <string name="msg_password_helper">Must contain at least eight characters.</string>
+    <string name="msg_empty_fields">Some fields are empty.</string>
+    <string name="msg_invalid_email">Invalid email address</string>
 </resources>

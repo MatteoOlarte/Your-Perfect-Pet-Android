@@ -20,4 +20,7 @@
     </string-array>
 
     <string name="msg_welcome">Inicia sección en tu cuenta o regístrate si no tienes una.</string>
+    <string name="msg_password_helper">Debe contener como mínimo 8 caracteres </string>
+    <string name="msg_empty_fields">Algunos campos están vacíos.</string>
+    <string name="msg_invalid_email">Dirección de correo electrónico no válida</string>
 </resources>
