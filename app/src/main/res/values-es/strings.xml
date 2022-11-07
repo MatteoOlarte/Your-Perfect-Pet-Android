@@ -12,6 +12,8 @@
     <string name="text_account_info">Información de la cuenta</string>
     <string name="text_job">Trabajo</string>
     <string name="text_preferences">Mascota favorita</string>
+    <string name="text_pets">Mascotas</string>
+    <string name="text_profile">Perfil</string>
 
     <string-array name="jobs">
         <item>"Employed"</item>

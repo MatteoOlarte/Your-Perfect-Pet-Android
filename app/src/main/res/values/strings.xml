@@ -11,6 +11,8 @@
     <string name="text_account_info">Account info</string>
     <string name="text_job">Job</string>
     <string name="text_preferences">Favorite pet</string>
+    <string name="text_pets">Pets</string>
+    <string name="text_profile">Profile</string>
 
     <string-array name="jobs">
         <item>"Employed"</item>

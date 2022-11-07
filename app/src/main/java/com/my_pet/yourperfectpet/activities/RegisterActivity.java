@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputLayout;
+import com.my_pet.yourperfectpet.App;
 import com.my_pet.yourperfectpet.R;
 
 import java.util.ArrayList;
@@ -49,9 +50,9 @@ public class RegisterActivity extends AppCompatActivity {
         registerButton.setOnClickListener(view -> {
             var intent = new Intent(this, CreatePetActivity.class);
 
-            if (!emptyFields(fields)) {
+            if (!App.emptyFields(fields)) {
                 Toast.makeText(this, R.string.msg_empty_fields, Toast.LENGTH_SHORT).show();
-            } else if (!verifyEmailAddress(inputEmail.getText().toString())) {
+            } else if (!App.verifyEmailAddress(inputEmail.getText().toString())) {
                 TextInputLayout textInputLayout = (TextInputLayout) inputEmail.getParent().getParent();
                 textInputLayout.setErrorEnabled(true);
                 textInputLayout.setError(getString(R.string.msg_invalid_email));
@@ -60,30 +61,5 @@ public class RegisterActivity extends AppCompatActivity {
             }
 
         });
-    }
-
-    public static boolean emptyFields(ArrayList<EditText> fields) {
-        for (EditText editText : fields) {
-            if (editText.getText().toString().isEmpty())
-                return false;
-        }
-        return true;
-    }
-
-    public static boolean verifyEmailAddress(String email) {
-        int atCounter = 0;
-        int dotCounter = 0;
-
-        for (char i : email.toCharArray()) {
-            if (i == '@')
-                atCounter++;
-            if (i == '.')
-                dotCounter++;
-        }
-
-        if (atCounter != 1)
-            return false;
-
-        return dotCounter >= 1;
     }
 }

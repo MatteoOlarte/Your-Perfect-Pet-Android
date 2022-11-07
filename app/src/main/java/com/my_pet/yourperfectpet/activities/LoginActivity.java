@@ -1,15 +1,15 @@
 package com.my_pet.yourperfectpet.activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.material.textfield.TextInputLayout;
+import com.my_pet.yourperfectpet.App;
 import com.my_pet.yourperfectpet.R;
 
 import java.util.ArrayList;
@@ -32,11 +32,11 @@ public class LoginActivity extends AppCompatActivity {
         fields.add(inputPassword);
 
         loginButton.setOnClickListener(view -> {
-            var intent = new Intent(this, CreatePetActivity.class);
+            var intent = new Intent(this, PetsActivity.class);
 
-            if (!RegisterActivity.emptyFields(fields)) {
+            if (!App.emptyFields(fields)) {
                 Toast.makeText(this, R.string.msg_empty_fields, Toast.LENGTH_SHORT).show();
-            } else if (!RegisterActivity.verifyEmailAddress(inputEmail.getText().toString())) {
+            } else if (!App.verifyEmailAddress(inputEmail.getText().toString())) {
                 TextInputLayout textInputLayout = (TextInputLayout) inputEmail.getParent().getParent();
                 textInputLayout.setErrorEnabled(true);
                 textInputLayout.setError(getString(R.string.msg_invalid_email));
