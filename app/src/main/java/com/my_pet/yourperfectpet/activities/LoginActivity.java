@@ -32,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
         fields.add(inputPassword);
 
         loginButton.setOnClickListener(view -> {
-            var intent = new Intent(this, PetsActivity.class);
+            var intent = new Intent(this, MainActivity.class);
 
             if (!App.emptyFields(fields)) {
                 Toast.makeText(this, R.string.msg_empty_fields, Toast.LENGTH_SHORT).show();

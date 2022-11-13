@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "830973699938",
+    "project_id": "yourperfectpet-bb8b5",
+    "storage_bucket": "yourperfectpet-bb8b5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:830973699938:android:7d5fdec7444c8493e32e3b",
+        "android_client_info": {
+          "package_name": "com.my_pet.yourperfectpet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "830973699938-ds3vcvla69ak8vlhr0hq9u2bi48ecp9t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.my_pet.yourperfectpet",
+            "certificate_hash": "99dc6ffe95369574cf130e7ae8756097814fabac"
+          }
+        },
+        {
+          "client_id": "830973699938-mnlfgsr75slfu4mm88du49l5pqktu71j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrKk-IvwsER8YKJ_KqB_IClIL73Qxh6cA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "830973699938-mnlfgsr75slfu4mm88du49l5pqktu71j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

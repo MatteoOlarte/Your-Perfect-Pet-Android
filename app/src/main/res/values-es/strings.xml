@@ -16,13 +16,20 @@
     <string name="text_profile">Perfil</string>
 
     <string-array name="jobs">
-        <item>"Employed"</item>
-        <item>"Self-Employed"</item>
-        <item>"Unemployed"</item>
+        <item>"Empleado"</item>
+        <item>"Trabajador por cuenta propia"</item>
+        <item>"Desempleado"</item>
+    </string-array>
+
+    <string-array name="pets">
+        <item>"Perros"</item>
+        <item>"Gatos"</item>
     </string-array>
 
     <string name="msg_welcome">Inicia sección en tu cuenta o regístrate si no tienes una.</string>
     <string name="msg_password_helper">Debe contener como mínimo 8 caracteres </string>
     <string name="msg_empty_fields">Algunos campos están vacíos.</string>
     <string name="msg_invalid_email">Dirección de correo electrónico no válida</string>
+    <string name="msg_helper_user_picture">Imagen de perfil</string>
+
 </resources>

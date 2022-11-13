@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragments.ProfileFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="24dp">
+
+        
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:cardElevation="2dp"
+            app:cardCornerRadius="50dp">
+
+            <ImageView
+                android:id="@+id/fragment_profile_picture"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/msg_helper_user_picture"
+                android:background="@drawable/circle"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_profile"/>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="match_parent"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/ImportantTextView"
+                android:id="@+id/fragment_profile_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="sample name"
+
+                tools:ignore="hardCodedText"/>
+
+            <TextView
+                android:id="@+id/fragment_profile_nickname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:text="sample nick"
+
+                tools:ignore="hardCodedText"/>
+
+            <TextView
+                android:id="@+id/fragment_profile_pet_preference"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="sample pet"
+
+                tools:ignore="hardCodedText"/>
+
+            <TextView
+                android:id="@+id/fragment_profile_job_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="sample job"
+
+                tools:ignore="hardCodedText"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="24dp"/>
+
+</LinearLayout>
