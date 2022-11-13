@@ -5,6 +5,7 @@
     <string name="text_register">Registrarse</string>
     <string name="text_welcome">Bienvenido</string>
     <string name="text_name">Nombre</string>
+    <string name="text_nick_name">Apodo</string>
     <string name="text_last_name">Apellido</string>
     <string name="text_email">Email</string>
     <string name="text_password">Contraseña</string>
@@ -14,6 +15,8 @@
     <string name="text_preferences">Mascota favorita</string>
     <string name="text_pets">Mascotas</string>
     <string name="text_profile">Perfil</string>
+    <string name="text_accept">Aceptar</string>
+    <string name="text_error">Error</string>
 
     <string-array name="jobs">
         <item>"Empleado"</item>
@@ -29,7 +32,9 @@
     <string name="msg_welcome">Inicia sección en tu cuenta o regístrate si no tienes una.</string>
     <string name="msg_password_helper">Debe contener como mínimo 8 caracteres </string>
     <string name="msg_empty_fields">Algunos campos están vacíos.</string>
-    <string name="msg_invalid_email">Dirección de correo electrónico no válida</string>
+    <string name="msg_invalid_email">Proporcione una dirección de correo electrónico correcta</string>
     <string name="msg_helper_user_picture">Imagen de perfil</string>
-
+    <string name="msg_register_error">La dirección de correo electrónico %1$s ya esta registrada.</string>
+    <string name="msg_login_error">Nombre de usuario o contraseña son incorrectos.</string>
+    <string name="msg_welcome_back">¡Bienvenido %1$s!</string>
 </resources>

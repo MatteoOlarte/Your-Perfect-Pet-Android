@@ -5,6 +5,7 @@
     <string name="text_welcome">Welcome</string>
     <string name="text_name">First Name</string>
     <string name="text_last_name">Last Name</string>
+    <string name="text_nick_name">Nickname</string>
     <string name="text_email">Email</string>
     <string name="text_password">Password</string>
     <string name="text_user_info">User info</string>
@@ -13,6 +14,8 @@
     <string name="text_preferences">Favorite pet</string>
     <string name="text_pets">Pets</string>
     <string name="text_profile">Profile</string>
+    <string name="text_accept">Accept</string>
+    <string name="text_error">Error</string>
 
     <string-array name="jobs">
         <item>"Employed"</item>
@@ -28,6 +31,9 @@
     <string name="msg_welcome">Login into your account or if your are new create one.</string>
     <string name="msg_password_helper">Must contain at least eight characters.</string>
     <string name="msg_empty_fields">Some fields are empty.</string>
-    <string name="msg_invalid_email">Invalid email address</string>
+    <string name="msg_invalid_email">Provide a properly formatted email address</string>
     <string name="msg_helper_user_picture">User picture</string>
+    <string name="msg_register_error">The email %1$s is already registered.</string>
+    <string name="msg_login_error">Incorrect username or password.</string>
+    <string name="msg_welcome_back">Welcome %1$s!</string>
 </resources>

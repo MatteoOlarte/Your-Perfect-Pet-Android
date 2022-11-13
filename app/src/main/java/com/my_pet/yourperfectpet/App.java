@@ -3,9 +3,13 @@ package com.my_pet.yourperfectpet;
 import android.app.Application;
 import android.widget.EditText;
 
+import com.my_pet.yourperfectpet.entity.AppUser;
+import com.my_pet.yourperfectpet.entity.User;
+
 import java.util.ArrayList;
 
 public class App extends Application {
+    public static AppUser user = new AppUser();
 
     public static boolean emptyFields(ArrayList<EditText> fields) {
         for (EditText editText : fields) {

@@ -1,24 +1,34 @@
 package com.my_pet.yourperfectpet.activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.android.material.progressindicator.LinearProgressIndicator;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.my_pet.yourperfectpet.App;
 import com.my_pet.yourperfectpet.R;
+import com.my_pet.yourperfectpet.entity.AppUser;
+import com.my_pet.yourperfectpet.entity.User;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class RegisterActivity extends AppCompatActivity {
+
+    private LinearProgressIndicator progressIndicator;
+    private Button registerButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,9 +44,10 @@ public class RegisterActivity extends AppCompatActivity {
         EditText inputPassword = findViewById(R.id.register_input_user_password);
         AutoCompleteTextView inputUserJob = findViewById(R.id.register_input_user_job_state);
         AutoCompleteTextView inputFavoritePet = findViewById(R.id.register_input_user_pet_preferences);
-        Button registerButton = findViewById(R.id.register_btn_register);
         List<String> jobItems = Arrays.asList(getResources().getStringArray(R.array.jobs));
         List<String> petItems = Arrays.asList(getResources().getStringArray(R.array.pets));
+        progressIndicator = findViewById(R.id.register_progress_indicator);
+        registerButton = findViewById(R.id.register_btn_register);
 
         fields.add(inputFirstName);
         fields.add(inputLastName);
@@ -48,7 +59,6 @@ public class RegisterActivity extends AppCompatActivity {
         inputUserJob.setAdapter(new ArrayAdapter<String>(this, R.layout.list_layout, jobItems));
         inputFavoritePet.setAdapter(new ArrayAdapter<String>(this, R.layout.list_layout, petItems));
         registerButton.setOnClickListener(view -> {
-            var intent = new Intent(this, CreatePetActivity.class);
 
             if (!App.emptyFields(fields)) {
                 Toast.makeText(this, R.string.msg_empty_fields, Toast.LENGTH_SHORT).show();
@@ -57,9 +67,53 @@ public class RegisterActivity extends AppCompatActivity {
                 textInputLayout.setErrorEnabled(true);
                 textInputLayout.setError(getString(R.string.msg_invalid_email));
             } else {
-                startActivity(intent);
+                AppUser user = new AppUser(
+                        inputEmail.getText().toString(),
+                        inputFirstName.getText().toString(),
+                        inputLastName.getText().toString(),
+                        inputUserJob.getText().toString(),
+                        inputFavoritePet.getText().toString()
+                );
+                progressIndicator.show();
+                registerButton.setEnabled(false);
+                registerUser(user, inputPassword.getText().toString());
             }
+        });
+    }
 
+    private void registerUser(final AppUser user, final String password) {
+        var intent = new Intent(this, MainActivity.class);
+        var firebaseAuth = FirebaseAuth.getInstance();
+        var firebaseStorage = FirebaseFirestore.getInstance();
+
+        firebaseAuth.createUserWithEmailAndPassword(user.getEmail(), password).addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                firebaseStorage.collection("users").document(user.getEmail()).set(user).addOnFailureListener(command -> {
+                    var errorDialog = new MaterialAlertDialogBuilder(this);
+                    errorDialog.setTitle(R.string.text_error);
+                    errorDialog.setMessage(command.getMessage());
+                    errorDialog.setCancelable(false);
+                    errorDialog.setPositiveButton(R.string.text_accept, (dialog, which) -> {
+                        dialog.dismiss();
+                    });
+                }).addOnSuccessListener(command -> {
+                    progressIndicator.hide();
+                    intent.putExtra("user_email", user.getEmail());
+                    startActivity(intent);
+                });
+            } else {
+                var errorDialog = new MaterialAlertDialogBuilder(this);
+                errorDialog.setTitle(R.string.text_error);
+                errorDialog.setMessage(task.getException().getMessage());
+                errorDialog.setCancelable(false);
+                errorDialog.setPositiveButton(R.string.text_accept, (dialog, which) -> {
+                    progressIndicator.hide();
+                    progressIndicator.setVisibility(View.GONE);
+                    registerButton.setEnabled(true);
+                    dialog.dismiss();
+                });
+                errorDialog.show();
+            }
         });
     }
 }
