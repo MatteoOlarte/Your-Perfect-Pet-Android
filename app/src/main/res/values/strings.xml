@@ -16,6 +16,15 @@
     <string name="text_profile">Profile</string>
     <string name="text_accept">Accept</string>
     <string name="text_error">Error</string>
+    <string name="text_edit_profile">Edit Profile</string>
+    <string name="text_sing_out">Sign Out</string>
+    <string name="text_add_pet">Add Pet</string>
+    <string name="text_age">Age</string>
+    <string name="text_weight">Weight</string>
+    <string name="text_year">Years Old</string>
+    <string name="text_picture">Picture</string>
+    <string name="text_add">Add</string>
+    <string name="text_descrition">Description</string>
 
     <string-array name="jobs">
         <item>"Employed"</item>
@@ -28,6 +37,13 @@
         <item>"Cats"</item>
     </string-array>
 
+    <string-array name="health_state">
+        <item>"Excellent"</item>
+        <item>"Good"</item>
+        <item>"Average"</item>
+        <item>"Bad"</item>
+    </string-array>
+
     <string name="msg_welcome">Login into your account or if your are new create one.</string>
     <string name="msg_password_helper">Must contain at least eight characters.</string>
     <string name="msg_empty_fields">Some fields are empty.</string>
@@ -36,4 +52,7 @@
     <string name="msg_register_error">The email %1$s is already registered.</string>
     <string name="msg_login_error">Incorrect username or password.</string>
     <string name="msg_welcome_back">Welcome %1$s!</string>
+    <string name="msg_question_pet_type">Is your pet a dog or a cat?</string>
+    <string name="msg_question_pet_race">What is your pet\'s race?</string>
+    <string name="msg_question_pet_vaccination">Is your pet fully vaccinated?</string>
 </resources>

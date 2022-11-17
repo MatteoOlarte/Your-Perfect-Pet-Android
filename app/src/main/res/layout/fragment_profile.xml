@@ -13,46 +13,49 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:paddingHorizontal="24dp"
         android:paddingVertical="10dp"
-        android:paddingHorizontal="24dp">
+        android:gravity="center">
 
-        
+
         <com.google.android.material.card.MaterialCardView
+            style="@style/Theme.YourPerfectPet.CardView"
+
             android:layout_width="100dp"
             android:layout_height="100dp"
-            app:cardElevation="2dp"
+
+            app:cardElevation="0dp"
             app:cardCornerRadius="50dp">
 
             <ImageView
-                android:id="@+id/fragment_profile_picture"
+                android:id="@+id/register_activity_profile_picture"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:contentDescription="@string/msg_helper_user_picture"
-                android:background="@drawable/circle"
                 android:scaleType="fitXY"
-                android:src="@drawable/ic_profile"/>
+                android:src="@drawable/ic_person2"
+                android:layout_margin="15dp"/>
 
         </com.google.android.material.card.MaterialCardView>
 
         <Space
-            android:layout_width="10dp"
-            android:layout_height="match_parent"/>
+            android:layout_width="40dp"
+            android:layout_height="match_parent" />
 
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <TextView
-                style="@style/ImportantTextView"
-
                 android:id="@+id/fragment_profile_name"
+
+                style="@style/ImportantTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="sample name"
 
-                tools:ignore="hardCodedText"/>
+                tools:ignore="hardCodedText" />
 
             <TextView
                 android:id="@+id/fragment_profile_nickname"
@@ -60,9 +63,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:text="sample nick"
-                android:visibility="invisible"
 
-                tools:ignore="hardCodedText"/>
+                tools:ignore="hardCodedText" />
 
             <TextView
                 android:id="@+id/fragment_profile_pet_preference"
@@ -70,7 +72,7 @@
                 android:layout_height="wrap_content"
                 android:text="sample pet"
 
-                tools:ignore="hardCodedText"/>
+                tools:ignore="hardCodedText" />
 
             <TextView
                 android:id="@+id/fragment_profile_job_status"
@@ -78,7 +80,14 @@
                 android:layout_height="wrap_content"
                 android:text="sample job"
 
-                tools:ignore="hardCodedText"/>
+                tools:ignore="hardCodedText" />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:text="Update"/>
 
         </LinearLayout>
 

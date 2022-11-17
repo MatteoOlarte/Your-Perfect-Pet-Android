@@ -37,8 +37,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
 
+                app:menu="@menu/main_menu"
                 app:layout_scrollFlags="scroll|enterAlways|snap"
                 app:title="Pets" />
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/main_activity_progress_indicator"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:visibility="gone"
+                app:trackColor="?colorPrimaryVariant"
+                app:indicatorColor="?colorPrimary"
+                app:elevation="0dp"/>
 
         </com.google.android.material.appbar.AppBarLayout>
 

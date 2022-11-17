@@ -12,15 +12,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.my_pet.yourperfectpet.R;
 import com.my_pet.yourperfectpet.entity.AppUser;
-import com.my_pet.yourperfectpet.entity.User;
+import com.my_pet.yourperfectpet.entity.BasicUser;
 
 public class ProfileFragment extends Fragment {
 
-    private final AppUser user;
+    private BasicUser user;
 
-    public ProfileFragment(AppUser user) {
+    public ProfileFragment(BasicUser user) {
         this.user = user;
     }
 
@@ -41,8 +42,11 @@ public class ProfileFragment extends Fragment {
         TextView outputPet = view.findViewById(R.id.fragment_profile_pet_preference);
         TextView outputJob = view.findViewById(R.id.fragment_profile_job_status);
 
-        outputUserName.setText(user.getFirstName() + " " + user.getLastName());
-        outputPet.setText(user.getPetPreference());
-        outputJob.setText(user.getJob());
+        if (FirebaseAuth.getInstance().getCurrentUser() != null && user instanceof AppUser appUser) {
+            outputUserName.setText(FirebaseAuth.getInstance().getCurrentUser().getDisplayName());
+            outputNickname.setText(appUser.getNickName());
+            outputJob.setText(appUser.getJobState().getValue(view.getContext()));
+            outputPet.setText(appUser.getFavoritePet().getValue(view.getContext()));
+        }
     }
 }

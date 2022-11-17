@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,10 +13,8 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.progressindicator.LinearProgressIndicator;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.FirebaseFirestore;
 import com.my_pet.yourperfectpet.App;
 import com.my_pet.yourperfectpet.R;
-import com.my_pet.yourperfectpet.entity.User;
 
 import java.util.ArrayList;
 
@@ -45,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.setOnClickListener(view -> {
             var intent = new Intent(this, MainActivity.class);
 
-            if (!App.emptyFields(fields)) {
+            if (!App.notEmptyFields(fields)) {
                 Toast.makeText(this, R.string.msg_empty_fields, Toast.LENGTH_SHORT).show();
             } else if (!App.verifyEmailAddress(inputEmail.getText().toString())) {
                 TextInputLayout textInputLayout = (TextInputLayout) inputEmail.getParent().getParent();
@@ -66,7 +63,6 @@ public class LoginActivity extends AppCompatActivity {
         firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 progressIndicator.hide();
-                intent.putExtra("user_email", email);
                 startActivity(intent);
             } else {
                 var errorDialog = new MaterialAlertDialogBuilder(this);

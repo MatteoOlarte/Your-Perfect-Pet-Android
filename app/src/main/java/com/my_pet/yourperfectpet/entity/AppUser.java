@@ -1,34 +1,58 @@
 package com.my_pet.yourperfectpet.entity;
 
-import androidx.annotation.NonNull;
+import com.my_pet.yourperfectpet.util.JobState;
+import com.my_pet.yourperfectpet.util.Pets;
 
-public class AppUser extends User {
-    private String job;
-    private String petPreference;
+public class AppUser extends BasicUser {
+    private JobState jobState;
+    private Pets favoritePet;
+    private String nickName;
 
-    public AppUser(@NonNull String email, @NonNull String firstName, @NonNull String lastName, String job, String petPreference) {
+    public AppUser(String email, String firstName, String lastName, JobState jobState, Pets favoritePet) {
         super(email, firstName, lastName);
-        this.job = job;
-        this.petPreference = petPreference;
+        this.jobState = jobState;
+        this.favoritePet = favoritePet;
+        this.nickName = getFirstName() + "_" + getLastName();
+    }
+
+    public AppUser(JobState jobState, Pets favoritePet) {
+        this.jobState = jobState;
+        this.favoritePet = favoritePet;
     }
 
     public AppUser() {
-        this("example@user.com", "Example", "User", "none", "none");
+
     }
 
-    public String getJob() {
-        return job;
+    public String getNickName() {
+        return nickName;
     }
 
-    public void setJob(String job) {
-        this.job = job;
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
     }
 
-    public String getPetPreference() {
-        return petPreference;
+    public JobState getJobState() {
+        return jobState;
     }
 
-    public void setPetPreference(String petPreference) {
-        this.petPreference = petPreference;
+    public void setJobState(JobState jobState) {
+        this.jobState = jobState;
+    }
+
+    public Pets getFavoritePet() {
+        return favoritePet;
+    }
+
+    public void setFavoritePet(Pets favoritePet) {
+        this.favoritePet = favoritePet;
+    }
+
+    @Override
+    public String toString() {
+        return "AppUser{" +
+                "jobState=" + jobState +
+                ", favoritePet=" + favoritePet +
+                '}';
     }
 }

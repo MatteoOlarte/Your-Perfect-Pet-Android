@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_add_pet"
+        android:title="@string/text_add_pet"/>
+
+    <item
+        android:id="@+id/action_sign_out"
+        android:title="@string/text_sing_out"/>
+
+</menu>

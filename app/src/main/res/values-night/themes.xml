@@ -27,4 +27,8 @@
     <style name="Theme.YourPerfectPet.Toolbar" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar">
         <item name="android:background">@color/black_light</item>
     </style>
+
+    <style name="Theme.YourPerfectPet.CardView" parent="Widget.MaterialComponents.CardView">
+        <item name="cardElevation">0dp</item>
+    </style>
 </resources>

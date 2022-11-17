@@ -17,6 +17,14 @@
     <string name="text_profile">Perfil</string>
     <string name="text_accept">Aceptar</string>
     <string name="text_error">Error</string>
+    <string name="text_edit_profile">Editar perfil</string>
+    <string name="text_sing_out">Cerrar Sesión</string>
+    <string name="text_add_pet">Agregar mascota</string>
+    <string name="text_age">Edad</string>
+    <string name="text_weight">Peso</string>
+    <string name="text_year">Años</string>
+    <string name="text_picture">Imagen</string>
+    <string name="text_add">Agregar</string>
 
     <string-array name="jobs">
         <item>"Empleado"</item>
@@ -37,4 +45,8 @@
     <string name="msg_register_error">La dirección de correo electrónico %1$s ya esta registrada.</string>
     <string name="msg_login_error">Nombre de usuario o contraseña son incorrectos.</string>
     <string name="msg_welcome_back">¡Bienvenido %1$s!</string>
+    <string name="msg_question_pet_type">¿Tu mascota es un perro o un gato?</string>
+    <string name="msg_question_pet_race">¿Cuál es la raza de tu mascota?</string>
+    <string name="msg_question_pet_vaccination">¿Tu mascota está completamente vacunada?</string>
+    <string name="text_descrition">Descripción</string>
 </resources>
